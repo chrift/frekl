@@ -6,9 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/apps/docs/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/apps/server/.turbo" />
       <excludeFolder url="file://$MODULE_DIR$/apps/web/.turbo" />
-      <excludeFolder url="file://$MODULE_DIR$/apps/web2/.turbo" />
-      <excludeFolder url="file://$MODULE_DIR$/apps/web2/build" />
       <excludeFolder url="file://$MODULE_DIR$/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/web/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/web/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

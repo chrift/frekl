@@ -6,7 +6,7 @@ const wss = new WebSocketServer({ port: 8080 })
 let socket: WebSocket
 
 wss.on('connection', function connection (ws) {
-  console.log('websocket connection')
+  console.log('Websocket client connected')
   socket = ws
   // ws.on('message', function message (data) {
   //   console.log('received: %s', data)
@@ -48,16 +48,13 @@ server.on('message', function (msg, info) {
 server.on('listening', function () {
   const address = server.address()
   const port = address.port
-  const family = address.family
   const ipaddr = address.address
-  console.log('Server is listening at port' + port)
-  console.log('Server ip :' + ipaddr)
-  console.log('Server is IP4/IP6 : ' + family)
+  console.log(`Frekl udp server available at http://${ipaddr}:${port}`)
 })
 
 //emits after the socket is closed using socket.close();
 server.on('close', function () {
-  console.log('Socket is closed !')
+  console.log('Socket is closed!')
 })
 
 server.bind(2222)
