@@ -1,0 +1,12 @@
+{
+  "name": "client",
+  "version": "0.0.0",
+  "private": true,
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12"
+  }
+}

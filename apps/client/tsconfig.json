@@ -1,0 +1,17 @@
+{
+  "extends": "tsconfig/base.json",
+  "include": ["src/**/*.ts",],
+  "exclude": ["node_modules", "lib"],
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src"
+  },
+  "references": [
+    {
+      "path": "../server"
+    },
+    {
+      "path": "../web2"
+    }
+  ]
+}

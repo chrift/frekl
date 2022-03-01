@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --rs false src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.12",
+    "@types/ws": "^8.5.1",
+    "config": "*",
+    "eslint": "7.32.0",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "ws": "^8.5.0"
+  }
+}

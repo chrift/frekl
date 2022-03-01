@@ -9,35 +9,8 @@ const maxGroupLength = 100
 
 export default function Web () {
   const [messages, setMessages] = useState<Record<string, string[]>>({})
-  const [ws, setWs] = useState<WebSocket>()
+  const [ws, setWs] = useState<WebSocket|null>()
 
-  const connectWs = useCallback(() => {
-    if (ws) {
-      return
-    }
-
-    addMessage('Connecting to websocket...')
-
-    const socketConnection = new WebSocket(`ws://localhost:8080`)
-
-    socketConnection.onerror = function () {
-      addMessage('WebSocket error')
-    }
-    socketConnection.onopen = function () {
-      addMessage('WebSocket connection established')
-    }
-    socketConnection.onclose = function () {
-      addMessage('WebSocket connection closed')
-      setWs(null)
-
-      setTimeout(connectWs, 1000)
-    }
-    socketConnection.onmessage = function (msg) {
-      msg.data.text().then(addMessage)
-    }
-
-    setWs(socketConnection)
-  }, [])
 
   const addMessage = useCallback((jsonMessage) => {
     let parsedMessage: UPCDashMessage
@@ -66,6 +39,34 @@ export default function Web () {
       }
     })
   }, [])
+
+  const connectWs = useCallback(() => {
+    if (ws) {
+      return
+    }
+
+    addMessage('Connecting to websocket...')
+
+    const socketConnection = new WebSocket(`ws://localhost:8080`)
+
+    socketConnection.onerror = function () {
+      addMessage('WebSocket error')
+    }
+    socketConnection.onopen = function () {
+      addMessage('WebSocket connection established')
+    }
+    socketConnection.onclose = function () {
+      addMessage('WebSocket connection closed')
+      setWs(null)
+
+      setTimeout(connectWs, 1000)
+    }
+    socketConnection.onmessage = function (msg) {
+      msg.data.text().then(addMessage)
+    }
+
+    setWs(socketConnection)
+  }, [addMessage, ws])
 
   useEffect(() => {
     connectWs()
