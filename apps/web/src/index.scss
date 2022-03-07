@@ -1,0 +1,22 @@
+$body-color: #e8e6e3;
+$body-bg: #000;
+$card-bg: lighten(#000, 12%);
+$font-size-base: 0.8rem;
+$table-border-color: lighten($card-bg, 12%);
+
+@import "bootstrap";
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

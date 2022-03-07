@@ -2,26 +2,38 @@ import * as udp from 'dgram'
 
 import WebSocket, { WebSocketServer } from 'ws'
 
-const wss = new WebSocketServer({ port: 8080 })
+const msgQueue: string[] = []
+
+const wss = new WebSocketServer({ port: 8002 })
 let socket: WebSocket
 
 wss.on('connection', function connection (ws) {
-  console.log('Websocket client connected')
+  console.log('Frekl websocket client connected')
   socket = ws
   // ws.on('message', function message (data) {
   //   console.log('received: %s', data)
   // })
   //
   // ws.send('something')
+
+  setInterval(() => {
+    if (msgQueue.length) {
+      send(msgQueue.splice(0, msgQueue.length))
+    }
+  }, 500)
 })
 
 wss.on('error', (e) => {
   console.error(e)
 })
 
-const send = (msg: Buffer) => {
+wss.on('listening', function(){
+  console.log(`Frekl websocket available at ${JSON.stringify(wss.address())}`)
+})
+
+const send = (msg: string[]) => {
   if (socket) {
-    socket.send(msg)
+    socket.send(JSON.stringify(msg))
   }
 }
 
@@ -36,12 +48,21 @@ server.on('error', function (error) {
   // server.close()
 })
 
+const maxQueueLength = 500
+const maxGroupLength = 100
+
 // emits on new datagram msg
 server.on('message', function (msg, info) {
-  // console.log('Data received from client : ' + msg.toString())
-  // console.log('Received %d bytes from %s:%d\n', msg.length, info.address, info.port)
+  try {
+    msgQueue.push(JSON.parse(msg.toString()))
 
-  send(msg)
+    // @todo restrict size by group
+    if (msgQueue.length > maxQueueLength) {
+      msgQueue.splice(0, maxQueueLength)
+    }
+  } catch (e) {
+    console.error(e)
+  }
 })
 
 //emits when socket is ready and listening for datagram msgs
@@ -57,4 +78,4 @@ server.on('close', function () {
   console.log('Socket is closed!')
 })
 
-server.bind(2222)
+server.bind(8003)

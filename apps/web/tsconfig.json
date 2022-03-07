@@ -20,7 +20,8 @@
     "noEmit": false,
     "jsx": "react-jsx",
     "incremental": true,
-    "composite": true
+    "composite": true,
+    "noImplicitAny": true
   },
   "files": [
     "./server/index.ts"
