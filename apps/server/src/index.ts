@@ -18,7 +18,11 @@ wss.on('connection', function connection (ws) {
 
   setInterval(() => {
     if (msgQueue.length) {
-      send(msgQueue.splice(0, msgQueue.length))
+      try {
+        send(msgQueue.splice(0, msgQueue.length))
+      } catch (e) {
+        console.error(__dirname, e)
+      }
     }
   }, 500)
 })
@@ -27,7 +31,7 @@ wss.on('error', (e) => {
   console.error(e)
 })
 
-wss.on('listening', function(){
+wss.on('listening', function () {
   console.log(`Frekl websocket available at ${JSON.stringify(wss.address())}`)
 })
 

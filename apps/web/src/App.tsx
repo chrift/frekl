@@ -136,7 +136,7 @@ export default function Web () {
                 {' '}{groupKey}{' '}
                 <Button size="sm" variant="outline-primary" onClick={() => clearGroupMessages(groupKey)}>Clear</Button>
               </Card.Title>
-              <div style={{ maxHeight: `80vh`, overflow: 'scroll' }}>
+              <div style={{ maxHeight: `50vh`, overflow: 'scroll' }}>
                 <Table striped>
                   <tbody>
                   {groupMessages.map((message, index) => <tr key={`${groupKey} - ${index}`}>
