@@ -1,7 +1,6 @@
 {
-  "name": "frekl",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@chrift/frekl",
+  "version": "0.0.1",
   "main": "apps/client/lib/index.js",
   "workspaces": [
     "apps/*",
