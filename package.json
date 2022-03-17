@@ -1,6 +1,6 @@
 {
   "name": "@chrift/frekl",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "apps/client/lib/index.js",
   "repository": "https://github.com/chrift/frekl",
   "workspaces": [
