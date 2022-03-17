@@ -4,7 +4,7 @@ Zero config simple development logging system
 
 ## Example usage
 
-```
+```javascript
 // Importing frekl will start the udp server and expose a static file server for the frekl dashboard
 // The url of the frekl dashboard will be logged to the console
 import frekl from '@chrift/frekl'
