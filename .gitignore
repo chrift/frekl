@@ -31,7 +31,3 @@ yarn-error.log*
 
 # turbo
 .turbo
-apps/client/lib
-apps/server/lib
-apps/web/server/index.d.ts
-apps/web/server/index.js
