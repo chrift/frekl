@@ -6,6 +6,10 @@
   "scripts": {
     "build": "tsc"
   },
+  "dependencies": {
+    "server": "*",
+    "web": "*"
+  },
   "devDependencies": {
     "@types/node": "^17.0.12"
   }

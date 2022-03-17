@@ -1,7 +1,7 @@
 import * as udp from 'dgram'
 
-import '../../server/lib'
-import '../../web/server'
+import 'server/lib'
+import 'web/server'
 
 // creating a client socket
 const client = udp.createSocket('udp4')

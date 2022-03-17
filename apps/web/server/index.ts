@@ -15,4 +15,4 @@ const port = 8001
 
 server.listen(port)
 
-console.log(`Frekl web app available at http://localhost:${port}`)
+console.log(`Frekl dashboard available at http://localhost:${port}`)
