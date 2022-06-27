@@ -1,5 +1,5 @@
-import 'server/lib';
-import 'web/server';
+import '@server/index';
+import '@web/index';
 declare function send(groupKey?: string, message?: string | number): void;
 declare namespace send {
     var close: () => void;

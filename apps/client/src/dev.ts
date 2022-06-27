@@ -1,7 +1,7 @@
 import * as udp from 'dgram'
 
-import 'server/lib'
-import 'web/server'
+import '@chrift/frekl-server'
+import '@chrift/frekl-web'
 
 // creating a client socket
 const client = udp.createSocket('udp4')

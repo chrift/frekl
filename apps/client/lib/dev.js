@@ -24,8 +24,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 exports.__esModule = true;
 var udp = __importStar(require("dgram"));
-require("server/lib");
-require("web/server");
+require("@server/index");
+require("@web/index");
 // creating a client socket
 var client = udp.createSocket('udp4');
 function send(groupKey, message) {

@@ -1,17 +1,31 @@
 {
   "extends": "tsconfig/base.json",
-  "include": ["src/**/*.ts",],
-  "exclude": ["node_modules", "lib"],
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
   "compilerOptions": {
     "outDir": "./lib",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@chrift/frekl-server/*": [
+        "../server/*"
+      ],
+      "@chrift/frekl-web/*": [
+        "../web/*"
+      ]
+    }
   },
   "references": [
     {
-      "path": "../server"
+      "path": "../frekl-server"
     },
     {
-      "path": "../web"
+      "path": "../frekl-web"
     }
   ]
 }

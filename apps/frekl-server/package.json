@@ -1,10 +1,12 @@
 {
-  "name": "server",
+  "name": "@chrift/frekl-server",
   "version": "0.0.0",
   "private": true,
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --respawn --rs false src/index.ts"
+    "dev": "ts-node-dev --respawn --rs false src/index.ts",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
