@@ -1,5 +1,5 @@
-import '@server/index';
-import '@web/index';
+import '@chrift/frekl-server';
+import '@chrift/frekl-web';
 declare function send(groupKey?: string, message?: string | number): void;
 declare namespace send {
     var close: () => void;

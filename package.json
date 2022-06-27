@@ -1,7 +1,7 @@
 {
   "name": "@chrift/frekl-base",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.14",
+  "repository": "https://github.com/chrift/frekl",
   "type": "module",
   "workspaces": [
     "apps/*",
@@ -12,7 +12,8 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "type-check": "turbo run type-check"
+    "type-check": "turbo run type-check",
+    "publish": "npm publish --access=public"
   },
   "devDependencies": {
     "prettier": "^2.5.1",
